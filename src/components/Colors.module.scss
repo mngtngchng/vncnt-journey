@@ -1,0 +1,35 @@
+$rich_black: rgba(7,22,27,0.7);
+$caribbean_current: rgb(61,115,127);
+$timberwolf: rgb(206,199,191);
+$caribbean_green: rgb(61, 220, 132);
+$android_green: rgb(164, 198, 57);
+$facebook_blue: rgb(24, 119, 242);
+$transparent: rgba(255, 255, 255, 0);
+
+.richBlack {
+  color: $rich_black;
+}
+
+.caribbeanCurrent {
+  color: $caribbean_current;
+}
+
+.timberwolf {
+  color: $timberwolf;
+}
+
+.caribbeanGreen {
+  color: $caribbean_green;
+}
+
+.androidGreen {
+  color: $android_green;
+}
+
+.facebookBlue {
+  color: $facebook_blue;
+}
+
+.transparent {
+  color: $transparent;
+}

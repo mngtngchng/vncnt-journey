@@ -1,0 +1,289 @@
+.Selfie {
+    width: 24%;
+    height: 36%;
+    border-radius: 8%;
+    margin-left: 16%;
+    margin-right: 16%;
+    transition: 0.3s;
+}
+
+.Navigation {
+    font-size: 24px;
+    border-radius: 20px;
+
+    animation-name: float_from_left;
+    animation-duration: 0.6s;
+}
+
+@keyframes float_from_right {
+    from {transform: translateX(200%);}
+    to {transform: translateX(0%);}
+}
+
+.Navigation:hover {
+    cursor: pointer;
+    transition: 0.6s;
+    border-width: 1px;
+    border-color: whitesmoke;
+}
+
+.Navigation:active {
+    background-color: rgb(61,115,127);
+    border-width: 0px;
+}
+
+.HeaderTitle {
+    font-size: 72px;
+    padding: 12px;
+    margin-right:72px; 
+    margin-left: 72px; 
+    margin-top: 24px; 
+    margin-bottom: 24px;
+    display: 'inline-flex';
+    
+    letter-spacing: 3px;
+    transform: scale(1.1);
+    transition: 0.6s;
+
+    /* animation-name: float_from_left;
+    animation-duration: 1s; */
+
+    display: inline-block;
+    cursor: pointer;
+    transition: text-shadow 0.3s ease;
+}
+
+.HeaderTitle:hover {
+    letter-spacing: 6px;
+    transform: scale(1.1);
+    transition: 0.6s;
+}
+
+.HeaderTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    height: 12px;
+    width: 0%;
+    background: rgba(56, 168, 242, 1); /* indigo underline */
+    transition: width 0.3s ease;
+}
+
+.HeaderTitle:hover::after  {
+    width: 100%;
+}
+
+.Title {
+    font-size: 24px;
+}
+
+.SectionHeader {
+    display: block;
+    letter-spacing: 3px;
+    transform: scale(1.1);
+    transition: 0.6s;
+
+    font-size: 48px;
+    padding: 16px;
+    display: inline-flex;
+    /* animation-name: float_from_left;
+    animation-timeline: scroll(); */
+}
+
+@keyframes float_from_left {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0%);}
+}
+
+.PureFloat {
+    transition: 0.6s;
+
+    animation-name: float_from_left;
+    animation-duration: 1s;
+}
+ 
+/* Hamburger container */
+.HamburgerLines {
+    height: 62px;
+    width: 36px;
+    position: relative; /* relative for absolute children */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center lines vertically */
+    align-items: center;     /* center horizontally */
+    cursor: pointer;
+}
+
+/* Hamburger lines */
+.Line {
+    position: absolute;      /* absolute so we can center/rotate easily */
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Top line */
+.Line:nth-child(1) {
+    top: 16px;               /* slightly from top */
+}
+
+/* Middle line */
+.Line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Bottom line */
+.Line:nth-child(3) {
+    bottom: 16px;            /* slightly from bottom */
+}
+
+/* Active state (cross) */
+.HamburgerLines.active .Line:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.HamburgerLines.active .Line:nth-child(2) {
+    opacity: 0;
+}
+
+.HamburgerLines.active .Line:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+.Icon:Hover {
+    transform: scale(110%);
+}
+
+.ExprncCntnt {
+    font-size: 24px;
+    text-indent: 18px;
+    list-style-type: none;
+}
+
+.ExprncCntnt li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.Degree {
+    float: left; 
+    margin-top: 36px;  
+    margin-right: 36px;
+}
+
+.Container {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Make the image to responsive */
+  .Image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* The overlay effect - lays on top of the container and over the image */
+  .Overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* When you mouse over the container, fade in the overlay title */
+  .Container:hover .Overlay {
+    opacity: 1;
+  }
+
+.Work {
+    float: left; 
+    padding: 24px; 
+    margin-top: 36px;  
+    margin-right: 36px; 
+}
+
+.Alert {
+    opacity: 0; 
+    position: fixed;
+    top: 120px;
+    right: 32px; 
+    font-size: 18px;
+}
+
+.LearnMore {
+    background-color: black;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    width: 36%;
+}
+
+.LearnMoreArrow {
+    display: none;
+}
+
+.LearnMore:hover {
+    background-color: rgba(58, 86, 95, 0.36);
+}
+
+.LearnMore:hover .LearnMoreText {
+    display: none;
+} 
+
+.LearnMore:hover .LearnMoreArrow  {
+    display: block;
+} 
+
+
+/* .HamburgerLines:hover .Line1 {
+    transform-origin: 0% 50%;
+    transform: rotate(45deg);
+}
+
+.HamburgerLines:hover .Line2 {
+    background: rgba(255, 255, 255, 0);
+}
+
+.HamburgerLines:hover .Line3 {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg);
+} */
+
+@media only screen and (max-width: 500px) {
+    .Navigation {
+        font-size: 24px;
+    }
+    .HeaderTitle {
+        font-size: 36px;
+    }
+    .Title {
+        font-size: 18px;
+    }
+    .Line {
+        font-size: 12px;
+    }
+    .HamburgerLines {
+        margin-left: 8px;
+        height: 36px;
+        width: 34.25px;
+    }
+    .SectionHeader {
+        font-size: 28px;
+    }
+    .ExprncCntnt { 
+        font-size: 18px;
+    }
+}

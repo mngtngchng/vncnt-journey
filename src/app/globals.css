@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  /* Bright-mode background set to LRV 72: RGB(207, 223, 226) */
+  --background-start-rgb: 207, 223, 226;
+  --background-end-rgb: 255, 255, 255;
+  /* Primary / brand (was cyan-500) */
+  --primary-rgb: 6, 182, 212; /* cyan-500 */
+  --primary-dark-rgb: 125, 211, 252; /* cyan-300-ish for hover/variants */
+  --primary-foreground-rgb: 0, 0, 0; /* text on primary in light mode */
+
+  /* Accent (was indigo) */
+  --accent-rgb: 79, 70, 229; /* indigo-600 */
+  --accent-dark-rgb: 99, 102, 241; /* indigo-500/400-ish */
+  --accent-foreground-rgb: 255, 255, 255; /* text on accent */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    /* dark-mode accent adjustments */
+    --primary-rgb: 14, 165, 233; /* slightly different in dark */
+    --primary-dark-rgb: 125, 211, 252;
+    --primary-foreground-rgb: 255, 255, 255;
+
+    --accent-rgb: 99, 102, 241;
+    --accent-dark-rgb: 125, 102, 255;
+    --accent-foreground-rgb: 255, 255, 255;
+  }
+}
+
+/* class-based overrides for manual toggle */
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --primary-rgb: 14, 165, 233;
+  --primary-dark-rgb: 125, 211, 252;
+  --primary-foreground-rgb: 255, 255, 255;
+
+  --accent-rgb: 99, 102, 241;
+  --accent-dark-rgb: 125, 102, 255;
+  --accent-foreground-rgb: 255, 255, 255;
+}
+
+.light {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 207, 223, 226;
+  --background-end-rgb: 255, 255, 255;
+  --primary-rgb: 6, 182, 212;
+  --primary-dark-rgb: 125, 211, 252;
+  --primary-foreground-rgb: 0, 0, 0;
+
+  --accent-rgb: 79, 70, 229;
+  --accent-dark-rgb: 99, 102, 241;
+  --accent-foreground-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Simple fade-in animation for toasts */
+@keyframes vncnt-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: vncnt-fade-in 220ms ease-out forwards;
+}
+
+
+/* Custom Scrollbars */
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.4);
+  border-radius: 10px;
+}
+
+.dark .custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(200, 200, 200, 0.25);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.6);
+}

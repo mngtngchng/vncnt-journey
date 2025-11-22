@@ -1,0 +1,4 @@
+/* scroll-behavior has to be assigned into "html" section */
+html { 
+    scroll-behavior: smooth;
+}
